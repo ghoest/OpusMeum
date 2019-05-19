@@ -1,0 +1,38 @@
+This program reads a worksheet and replaces the following values
+
+        Text           | Value
+  ------------------------------------------------------------------
+  {date: $fmt [$when]} | fmt is for the clock format and when is for
+                       | the time specification. Value's supported
+                       | by Tcls date command (8.5+) must be used.
+  {env: $var [$def]}   | Value of environment variable, $var; may
+                       | specify a default value.
+
+The following tags are also recognized (tags are placed before and after the line being tagged)
+
+     Tag          |  Purpose
+  ------------------------------------------------------------------
+  {command}       |  Background in lightgray; On right click the
+                  |  block turns a darker shade of gray and copies
+                  |  the block to the clipboard.  The final linefeed
+                  |  in the command block is stripped.
+                  |  On left click, the block turns back to the
+                  |  lighter shade of gray and clears the clipboard.
+  {comment}       |  Does not appear in the interface.
+  {copy}          |  Copy block; like command, but keeps linefeeds.
+  {example}       |  Background in teal.
+  {header}        |  Center justify text and underline;
+                  |  adds to "Table of Headers."
+  {link}          |  Open the link, shade to purple.
+  {local}         |  Background in green.  On left click, run the
+                  |  command locally.   The background will be
+                  |  shaded gray until the command completes.  When
+                  |  completed, the block will change to light green
+                  |  for a 'successful' exit and light red otherwise.
+                  |  After the command has completed, left click to
+                  |  open a window with the output.
+                  |  On double right click, reset the block.
+  {mail}          |  Click to populate an email in the default client.
+  {plink}         |  Background in orange.  Similar to {local}, but
+                  |  uses Putty's plink.exe to run a 'script'.
+  {warning}       |  Font is displayed in red
