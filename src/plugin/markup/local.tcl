@@ -210,16 +210,13 @@ proc local_output {txtwidget uniqtag output} {
         # Use the value from the registry if it exists...
         wm geometry .${uniqtag}_output [::appcfg get "localoutputpos" "1020x240"]
 
-        # Update size and position on change.
-#        bind .${uniqtag}_output <Configure> \
-#                [list ::appcfg set localoutputpos [wm geometry .${uniqtag}_output] TRUE]
-        # Save the size and position of the window when it's closed/destroyed.
-#        bind .${uniqtag}_output <Destroy> {::appcfg save}
-
         # make a button frame (so we get the pretty side by side buttons)
-        frame .${uniqtag}_output.btn
-        button .${uniqtag}_output.btn.copy -text "copy"
-        pack .${uniqtag}_output.btn.copy -side left
+        button .${uniqtag}_output.btncopy -text "copy"
+
+                # Create a checkbox to toggle highlight of every other line
+        checkbutton .${uniqtag}_output.cb -variable ::${uniqtag}_cbval \
+                -text "Highlight every other line" -onvalue 1 -offvalue 0 \
+                -command [list local_toggle_hl .${uniqtag}_output.txt ::${uniqtag}_cbval]
 
         # Add a scrollbar
         ttk::scrollbar .${uniqtag}_output.sb -orient vert
@@ -227,25 +224,40 @@ proc local_output {txtwidget uniqtag output} {
         .${uniqtag}_output.txt configure -yscrollcommand [list .${uniqtag}_output.sb set]
 
         # Put the form together
-        place .${uniqtag}_output.txt -relheight 15.0 -height 15.0 -relwidth 1.0 -width -15
+        place .${uniqtag}_output.txt -relheight 1.0 -height -18 -relwidth 1.0 -width -15
         place .${uniqtag}_output.sb -relx 1.0 -x -15 -relheight 1.0 -width 15
-        #place .${uniqtag}_output.btn -? ?
-        place .${uniqtag}_output.btn.copy -relx 0.125 -rely 1.0 -y -18 -height 18
+        place .${uniqtag}_output.btncopy -relx 0.125 -rely 1.0 -y -18 -height 18
+        place .${uniqtag}_output.cb -relx 0.325 -rely 1.0 -y -18 -height 18
 
     } else {
         # the window already exists, bring it the the 'front'.
         raise .${uniqtag}_output
+        focus .${uniqtag}_output
     }
-    .${uniqtag}_output.btn.copy configure -command "
+    .${uniqtag}_output.btncopy configure -command "
         clipboard clear
         clipboard append \"$output\"
     "
     .${uniqtag}_output.txt delete 1.0 end
     .${uniqtag}_output.txt insert end $output
-    focus .${uniqtag}_output
+    for {set line 1} {$line <= [.${uniqtag}_output.txt count -line 1.0 end]} {incr line} {
+        if {[expr {$line % 2}] == 0} {
+            .${uniqtag}_output.txt tag add hl ${line}.0 [expr {$line + 1}].0
+        }
+    }
+
+    .${uniqtag}_output.txt configure -state disabled
 
 }
 
+proc local_toggle_hl {txtwidget cbvar} {
+    upvar $cbvar val
+    if {$val} {
+        $txtwidget tag configure hl -background #e8e8e8
+    } else {
+        $txtwidget tag configure hl -background {}
+    }
+}
 
 ################################################################################
 #   Procedure: local_save
