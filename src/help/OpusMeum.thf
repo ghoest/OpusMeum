@@ -4,7 +4,7 @@ This program reads a worksheet and replaces the following values
   ------------------------------------------------------------------
   {date: $fmt [$when]} | fmt is for the clock format and when is for
                        | the time specification. Value's supported
-                       | by Tcls date command (8.5+) must be used.
+                       | by Tcls date command (8.6) must be used.
   {env: $var [$def]}   | Value of environment variable, $var; may
                        | specify a default value.
 

@@ -1,8 +1,10 @@
-# vim: filetype=tcl shiftwidth=4 smarttab expandtab
 ####################################################################################################
-# NAME       : mtag_local.tcl
+#/---------------------------------------
+#| Name    local.tcl
+#\---------------------------------------
 #
-# DESCRIPTION: Markup Tag {local}
+# Description
+#     Markup Tag {local}
 #
 # PROCEDURES : local_edit
 #              local_mtag
@@ -10,7 +12,7 @@
 #              local_save
 #
 # VARIABLES  : ::_before_processing_template  -- used in OpusMeum.tcl
-#              ::_known_markup                  -- used in OpusMeum.tcl
+#              ::_known_markup                -- used in OpusMeum.tcl
 #              ::appcfg                       -- From OpusMeum.tcl
 ####################################################################################################
 lappend ::_known_markup {local}

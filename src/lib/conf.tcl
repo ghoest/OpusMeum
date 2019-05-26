@@ -1,8 +1,16 @@
-# vim: filetype=tcl shiftwidth=4 smarttab expandtab
 ####################################################################################################
-# conf.tcl
+#/---------------------------------------
+#| Name    conf.tcl
+#\---------------------------------------
 #
-# Package to simplify managing application configuration.
+# Description
+#     Package to simplify managing application configuration.
+#     This is intended to be a general purpose package, but at the moment is specific to OpusMeum
+#
+# TODO
+#     There is still quite a bit of code that's not fully written.  At the moment, it
+#     is assumed that the platform being used is Windows and the registry is used at the
+#     storage for the (persisted configuration).
 #
 # Arguments
 #     -app       The application name to use with configuration backing.  Defaults to
@@ -20,9 +28,6 @@
 #        ::configuration create myAppConf -create TRUE
 #        myAppConf get "SomeSetting" "" TRUE
 #
-# PROCEDURES :
-#
-# VARIABLES  :
 ####################################################################################################
 package provide conf {1.0}
 
@@ -31,7 +36,6 @@ package require registry
 
 ################################################################################
 # Class: conf
-#
 #
 # Private Methods
 # ============================================
@@ -100,7 +104,7 @@ oo::class create conf {
 #     "initialize" helper method; load from registry.
 #
 # Parameters
-# 
+#
 # None.
 #
 ################################################################################
@@ -186,9 +190,9 @@ oo::define conf method get {key {def ""}} {
 #     Initialize configuration data.
 #
 # Error Handling
-#     ENTRY_DNE         The configuration backing does not exist and -create
+#     DNE               The configuration backing does not exist and -create
 #                       was not specified.
-#     INVALID_TYPE      The configuration backing type is not known.
+#     UNKTYPE           The configuration backing type is not known.
 ################################################################################
 oo::define conf method initialize {} {
     variable cfg

@@ -1,10 +1,10 @@
-# vim: filetype=tcl shiftwidth=4 smarttab expandtab
 ####################################################################################################
-# NAME       : debug.tcl
+#/---------------------------------------
+#| Name    debug.tcl
+#\---------------------------------------
 #
-# SYNTAX     : debug.tcl
-#
-# DESCRIPTION: debugging procedures.
+# Description
+#     debugging procedures.
 #
 # PROCEDURES : _print_taginfo
 #              _taginfo

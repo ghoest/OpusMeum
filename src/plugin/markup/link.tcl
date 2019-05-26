@@ -1,8 +1,10 @@
-# vim: filetype=tcl shiftwidth=4 smarttab expandtab
 ####################################################################################################
-# NAME       : mtag_link.tcl
+#/---------------------------------------
+#| Name    link.tcl
+#\---------------------------------------
 #
-# DESCRIPTION: Markup Tag {link}
+# Description
+#     Markup Tag {link}
 #
 # PROCEDURES : link_mtag
 #

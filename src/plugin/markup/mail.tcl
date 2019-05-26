@@ -1,8 +1,10 @@
-# vim: filetype=tcl shiftwidth=4 smarttab expandtab
 ####################################################################################################
-# NAME       : mtag_mail.tcl
+#/---------------------------------------
+#| Name    mail.tcl
+#\---------------------------------------
 #
-# DESCRIPTION: Markup Tag {mail}
+# Description
+#     Markup Tag {mail}
 #
 # PROCEDURES : mail_fill
 #

@@ -1,7 +1,10 @@
-###############################################################################
-# app.tcl
-#========
-# Package to simplify of the common functions used by an application
+####################################################################################################
+#/---------------------------------------
+#| Name    app.tcl
+#\---------------------------------------
+#
+# Description
+#     Package to simplify common functions used by an application
 package provide app {1.0}
 
 package require TclOO
@@ -70,7 +73,7 @@ oo::define app method save {args} {
 }
 
 oo::define app method Save.save {} {
-    # TODO write the log to do the actual saving
+    # TODO write the logic to do the actual saving
 	
 	return
 }

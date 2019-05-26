@@ -1,9 +1,10 @@
-# vim: filetype=tcl shiftwidth=4 smarttab expandtab
 ####################################################################################################
-# NAME       : mtag_header.tcl
+#/---------------------------------------
+#| Name    header.tcl
+#\---------------------------------------
 #
-# DESCRIPTION: Markup Tag {header}
-#
+# Description
+#     Markup Tag {header}
 #
 # PROCEDURES : header_link
 #              header_mtag

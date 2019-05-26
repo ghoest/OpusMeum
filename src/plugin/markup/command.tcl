@@ -1,8 +1,10 @@
-# vim: filetype=tcl shiftwidth=4 smarttab expandtab
 ####################################################################################################
-# NAME       : mtag_command.tcl
+#/---------------------------------------
+#| Name    command.tcl
+#\---------------------------------------
 #
-# DESCRIPTION: Markup Tag {command}
+# Description
+#     Markup Tag {command}
 #
 # PROCEDURES : command_edit
 #              command_mtag
@@ -10,7 +12,7 @@
 #              command_save
 #
 # VARIABLES  : ::_before_processing_template  -- used in OpusMeum.tcl
-#              ::_known_markup                  -- used in OpusMeum.tcl
+#              ::_known_markup                -- used in OpusMeum.tcl
 #              ::appcfg                       -- From OpusMeum.tcl
 ####################################################################################################
 lappend ::_known_markup {command}

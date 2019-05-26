@@ -3,7 +3,7 @@
 #| Name    OpusMeum.tcl
 #\---------------------------------------
 #
-# Description 
+# Description
 #     A GUI to present the user with an interactive document (loaded from a template) to peform a
 #     set of tasks.
 #
@@ -28,7 +28,7 @@
 ####################################################################################################
 # These packages are assumed to exist on auto_path or be included with the tclkit binary in use.
 package require http
-package require Tcl 8.5
+package require Tcl 8.6
 package require Tk
 
 #package require Tclx
@@ -63,7 +63,7 @@ package require twapi
 package require app
 ::app create ::omApp -name "Opus Meum" -version "0.4"
 
-# Configuration library 
+# Configuration library
 package require conf
 # Use default registry path structure, by passing empty string as -base.
 unset -nocomplain ::appcfg

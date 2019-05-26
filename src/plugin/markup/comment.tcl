@@ -1,8 +1,10 @@
-# vim: filetype=tcl shiftwidth=4 smarttab expandtab
 ####################################################################################################
-# NAME       : mtag_comment.tcl
+#/---------------------------------------
+#| Name    comment.tcl
+#\---------------------------------------
 #
-# DESCRIPTION: Markup Tag {comment}
+# Description
+#     Markup Tag {comment}
 #
 # PROCEDURES : comment_mtag
 #

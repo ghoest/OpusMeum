@@ -1,8 +1,10 @@
-# vim: filetype=tcl shiftwidth=4 smarttab expandtab
 ####################################################################################################
-# NAME       : mtag_example.tcl
+#/---------------------------------------
+#| Name    example.tcl
+#\---------------------------------------
 #
-# DESCRIPTION: Markup Tag {example}
+# Description
+#     Markup Tag {example}
 #
 # PROCEDURES : example_mtag
 #

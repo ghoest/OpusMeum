@@ -1,8 +1,10 @@
-# vim: filetype=tcl shiftwidth=4 smarttab expandtab
 ####################################################################################################
-# NAME       : mtag_warning.tcl
+#/---------------------------------------
+#| Name    warning.tcl
+#\---------------------------------------
 #
-# DESCRIPTION: Markup Tag {warning}
+# Description
+#     Markup Tag {warning}
 #
 # PROCEDURES : warning_mtag
 #

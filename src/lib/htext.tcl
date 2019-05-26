@@ -1,4 +1,3 @@
-# vim: filetype=tcl shiftwidth=4 smarttab expandtab
 # htext.tcl
 # Copied from the Tcler's wiki: http://wiki.tcl.tk/1848
 #

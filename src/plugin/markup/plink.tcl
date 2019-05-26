@@ -1,10 +1,10 @@
-# vim: filetype=tcl shiftwidth=4 smarttab expandtab
 ####################################################################################################
-# mu_plink.tcl
+#/---------------------------------------
+#| Name    plink.tcl
+#\---------------------------------------
 #
-#     MarkUp plugin to use with plink
-#
-# DESCRIPTION: Markup Tag {plink}
+# Description
+#     Markup Tag {plink}.  Use plink to run small 'scripts' on the remote host.
 #
 # PROCEDURES : plink_bgjob
 #              plink_edit
@@ -16,7 +16,7 @@
 #              plink_save
 #
 # VARIABLES  : ::_before_processing_template  -- used in OpusMeum.tcl
-#              ::_known_markup                  -- used in OpusMeum.tcl
+#              ::_known_markup                -- used in OpusMeum.tcl
 #              ::appcfg                       -- From OpusMeum.tcl
 #
 ####################################################################################################

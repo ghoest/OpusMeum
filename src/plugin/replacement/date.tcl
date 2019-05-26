@@ -1,8 +1,10 @@
-# vim: filetype=tcl shiftwidth=4 smarttab expandtab
 ####################################################################################################
-# NAME       : rtag_date.tcl
+#/---------------------------------------
+#| Name    date.tcl
+#\---------------------------------------
 #
-# DESCRIPTION: Replacement Tag {date}
+# Description
+#     Replacement Tag {date}
 #
 # PROCEDURES : date_rtag
 #

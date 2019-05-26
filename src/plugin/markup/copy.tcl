@@ -1,8 +1,10 @@
-# vim: filetype=tcl shiftwidth=4 smarttab expandtab
 ####################################################################################################
-# NAME       : mtag_copy.tcl
+#/---------------------------------------
+#| Name    copy.tcl
+#\---------------------------------------
 #
-# DESCRIPTION: Markup Tag {copy}
+# Description
+#     Markup Tag {copy}
 #
 # PROCEDURES : copy_mtag
 #
