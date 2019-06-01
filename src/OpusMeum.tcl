@@ -294,11 +294,6 @@ proc load_template {txtwidget {template ""}} {
     set looking false
     set starttag ""
 
-    # Legacy user name tag...
-    #checker -scope line exclude warnArgWrite
-    regsub -all {\(USER\)} $template $user template
-    #checker -scope line exclude warnArgWrite
-    regsub -all {\(intl\)} $template $user template
     unset -nocomplain mu
     map_markup template mu
     $txtwidget insert end $template
