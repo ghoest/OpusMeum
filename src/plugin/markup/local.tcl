@@ -156,8 +156,36 @@ proc local_run {txtwidget uniqtag} {
     $txtwidget configure -state disabled
 
     $txtwidget tag bind $uniqtag <Button-1> {}
-    # Assume the command should be passed to cmd.exe to run... this could be improved upon...
-    set ch [open "| [list cmd /c {*}$cmd] "]
+    # Assumes that we are on Windows
+    # Check for commands that are part of the cmd.exe shell, assume anything else should be run directly
+    # ... This could probably still stand some improvement
+    switch -exact [string tolower [lindex $cmd 0]] {
+        "assoc" - "attrib" -
+        "break" - "bcdedit" -
+        "cacls" - "call" - "cd" - "chcp" - "chdir" - "chkdsk" - "chkntfs" - "cls" - "color" - "comp" - "compact" - "convert" - "copy" -
+        "date" - "del" - "dir" - "diskpart" - "doskey" - "driverquery" -
+        "echo" - "endlocal" - "erase" - "exit" -
+        "fc" - "find" - "findstr" - "for" - "format" - "fsutil" - "ftype" -
+        "goto" - "gpresult" - "graftabl" -
+        "help" -
+        "icacls" - "if" -
+        "label" -
+        "md" - "mkdir" - "mklink" - "mode" - "more" - "move" -
+        "openfiles" -
+        "path" - "pause" - "popd" - "print" - "prompt" - "pushd" -
+        "rd" - "recover" - "rem" - "ren" - "rename" - "replace" - "rmdir" - "robocopy" -
+        "set" - "setlocal" - "sc" - "schtasks" - "shift" - "shutdown" - "sort" - "start" - "subst" - "systeminfo" -
+        "tasklist" - "taskkill" - "time" - "title" - "tree" - "type" -
+        "ver" - "verify" - "vol" -
+        "xcopy" -
+        "wmic" {
+            set ch [open "| [list cmd /c {*}$cmd] 2>@1"] 
+        }
+        default {
+            set ch [open "| [list {*}$cmd]"]
+        }
+    }
+    
     # Switch to nonblocking in order to keep the GUI responsive while it's running.
     fconfigure $ch -blocking FALSE
     fileevent $ch readable [list local_bgjob $ch $txtwidget $uniqtag]
@@ -184,7 +212,7 @@ proc local_bgjob {chandle txtwidget uniqtag} {
 
         if {$result} {
             append ::output($uniqtag) $err
-            set color #F567E
+            set color #F56E7E
 #E46878
         } else {
             set color #68F27B
